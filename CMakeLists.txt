@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(PATHS . )
 set(NAME_EXECUTABLE "matrix")
 set(NAME_TEST "test_matrix")
 
@@ -22,11 +21,6 @@ set_target_properties(${NAME_EXECUTABLE} ${NAME_TEST} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
-
-target_include_directories(${NAME_EXECUTABLE}
-    PRIVATE "${PATHS}"
-)
-
 
 set_target_properties(${NAME_TEST} PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
