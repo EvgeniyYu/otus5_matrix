@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(NAME_PROJECT "matrix")
 set(NAME_EXECUTABLE "matrix")
 set(NAME_TEST "test_matrix")
 
 
 if ($ENV{GITHUB_RUN_NUMBER})
-	project(${NAME_PROJECT} VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
+	project(${NAME_EXECUTABLE} VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 else()
-	project(${NAME_PROJECT} VERSION 0.0.1)
+	project(${NAME_EXECUTABLE} VERSION 0.0.1)
 endif()
 
 
@@ -23,7 +22,7 @@ set_target_properties(${NAME_EXECUTABLE} ${NAME_TEST} PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
-target_include_directories(${NAME_PROJECT}
+target_include_directories(${NAME_EXECUTABLE}
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
@@ -32,13 +31,8 @@ set_target_properties(${NAME_TEST} PROPERTIES
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
-target_link_libraries(${NAME_EXECUTABLE} PRIVATE
-    ${NAME_PROJECT}
-)
-
 target_link_libraries(${NAME_TEST}
     ${Boost_LIBRARIES}
-    ${NAME_PROJECT}
 )
 
 
