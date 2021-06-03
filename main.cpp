@@ -19,7 +19,7 @@ int main()
     {
     	for (size_t j = 1; j < 9; j++)
     	{
-    		std::cout << matrix[i][j] << " ";
+    	    std::cout << matrix[i][j] << " ";
     	}
     	std::cout << std::endl;
     }
@@ -27,7 +27,7 @@ int main()
     std::cout << matrix.size() << std::endl;
     assert(matrix.size() == 20 && "size must be 20!");     
 
-	for (const auto& c: matrix)
+    for (const auto& c: matrix)
     {
         int x;
         int y;
