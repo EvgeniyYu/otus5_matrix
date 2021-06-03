@@ -3,7 +3,7 @@
 
 int main()
 {
-	const size_t MAX_SIZE = 10;
+    const size_t MAX_SIZE = 10;
     Matrix<int, 0> matrix;
     
     assert(matrix.size() == 0 && "size must be zero!"); 
