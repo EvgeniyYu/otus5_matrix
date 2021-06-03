@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-
+set(PATHS . )
 set(NAME_EXECUTABLE "matrix")
 set(NAME_TEST "test_matrix")
 
@@ -24,8 +24,9 @@ set_target_properties(${NAME_EXECUTABLE} ${NAME_TEST} PROPERTIES
 )
 
 target_include_directories(${NAME_EXECUTABLE}
-    PRIVATE "${CMAKE_BINARY_DIR}"
+    PRIVATE "${PATHS}"
 )
+
 
 set_target_properties(${NAME_TEST} PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
@@ -37,9 +38,9 @@ target_link_libraries(${NAME_EXECUTABLE} PRIVATE
 )
 
 target_link_libraries(${NAME_TEST}
-    ${Boost_LIBRARIES}
-    
+    ${Boost_LIBRARIES}    
 )
+
 
 if (MSVC)
     target_compile_options(${NAME_EXECUTABLE} PRIVATE
