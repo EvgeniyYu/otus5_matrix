@@ -3,7 +3,7 @@
 
 int main()
 {
-	const size_t MAX_SIZE = 10;
+    const size_t MAX_SIZE = 10;
     Matrix<int, 0> matrix;
     
     assert(matrix.size() == 0 && "size must be zero!"); 
@@ -19,7 +19,7 @@ int main()
     {
     	for (size_t j = 1; j < 9; j++)
     	{
-    		std::cout << matrix[i][j] << " ";
+    	    std::cout << matrix[i][j] << " ";
     	}
     	std::cout << std::endl;
     }
@@ -27,7 +27,7 @@ int main()
     std::cout << matrix.size() << std::endl;
     assert(matrix.size() == 18 && "size must be 18!");     
 
-	for (const auto& c: matrix)
+    for (const auto& c: matrix)
     {
         int x;
         int y;
