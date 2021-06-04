@@ -25,7 +25,7 @@ int main()
     }
         
     std::cout << matrix.size() << std::endl;
-    assert(matrix.size() == 20 && "size must be 20!");     
+    assert(matrix.size() == 18 && "size must be 18!");     
 
 	for (const auto& c: matrix)
     {

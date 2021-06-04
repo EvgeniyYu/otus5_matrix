@@ -138,6 +138,7 @@ public:
 	
 	ProxyObject<T, default_value>& operator= (T val)
 	{
+		if (val == default_value) return *this;
 		Element<T> e(Key(row, col), val);
 		obj.set_value(e);
 		return *this;
