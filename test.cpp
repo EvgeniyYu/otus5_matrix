@@ -32,6 +32,8 @@ BOOST_AUTO_TEST_CASE(test_result)
     
     matrix[50][50] = 400;	//size = 3
     BOOST_CHECK(matrix[50][50] == 400);
+    matrix[50][50] = -1;
+    BOOST_CHECK(matrix.size() == 2);
 
     std::stringstream out;
     for (const auto& c: matrix)
@@ -43,7 +45,7 @@ BOOST_AUTO_TEST_CASE(test_result)
         
         out << x << y << v;
     }
-	BOOST_CHECK(out.str() == "10010031410103005050400");	
+	BOOST_CHECK(out.str() == "1001003141010300");	
 	
 }
 

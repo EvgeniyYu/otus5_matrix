@@ -89,9 +89,17 @@ class Matrix
         const Key k(element.key);
         it = std::find_if(v_values.begin(), v_values.end(), [&k](const auto& e) {return (e.key == k)? true: false;});        
         if (it != v_values.end())
-            (*it).value = element.value;
-        else    
-            v_values.push_back(element);
+        {
+        	if (element.value == default_value)	//free element in vector
+        		v_values.erase(it);
+        	else
+            	(*it).value = element.value;	//assign new value
+        }
+        else
+        {    
+        	if (element.value != default_value)
+            	v_values.push_back(element);
+        }
     }
 
     
@@ -138,7 +146,6 @@ public:
 	
 	ProxyObject<T, default_value>& operator= (T val)
 	{
-		if (val == default_value) return *this;
 		Element<T> e(Key(row, col), val);
 		obj.set_value(e);
 		return *this;
